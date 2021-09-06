@@ -1,11 +1,11 @@
-const { GameObject2D, CircleRenderer, colors } = require("engine");
+const { GameObject2D, CircleRenderer, Color } = require("engine");
 
 module.exports = {
     sun: new GameObject2D({
         renderers: [
             new CircleRenderer({
                 radius: 150,
-                color: colors.yellow
+                color: Color.yellow
             })
         ],
         children: {
@@ -21,7 +21,7 @@ module.exports = {
                         renderers: [
                             new CircleRenderer({
                                 radius: 20,
-                                color: colors.blue
+                                color: Color.blue
                             })
                         ],
                         children: {
@@ -37,7 +37,7 @@ module.exports = {
                                         renderers: [
                                             new CircleRenderer({
                                                 radius: 9,
-                                                color: colors.gray
+                                                color: Color.gray
                                             })
                                         ],
                                     })

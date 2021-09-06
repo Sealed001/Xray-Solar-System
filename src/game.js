@@ -1,8 +1,21 @@
-const { colors } = require("engine");
+const { Color } = require("engine");
 
 class Game {
+    init() {
+        this.hue = 0;
+    }
+    onUpdate() {
+        this.hue += this.dt * 20;
+
+        if (this.hue >= 360) {
+            this.hue -= 360;
+        }
+    }
     on2dDraw() {
-        this.raylib.DrawRectangle(200, 1, 20, 20, colors.red);
+        this.r.DrawRectangle(0, 0, 50, 50, new Color(255, 0, 255));
+        this.r.DrawRectangle(0, 50, 50, 50, Color.HSV(this.hue, 100, 100));
+        this.r.DrawRectangle(0, 100, 50, 50, Color.HSV(this.hue, 100, 80));
+        this.r.DrawRectangle(0, 150, 50, 50, Color.skyblue);
     }
 }
 
